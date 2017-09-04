@@ -158,13 +158,13 @@ namespace Grand.Web.Areas.Admin.Models.Settings
             public bool WwwRequirement_OverrideForStore { get; set; }
             public SelectList WwwRequirementValues { get; set; }
 
-            [GrandResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.EnableJsBundling")]
-            public bool EnableJsBundling { get; set; }
-            public bool EnableJsBundling_OverrideForStore { get; set; }
+            [GrandResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.EnableJsMinification")]
+            public bool EnableJsMinification { get; set; }
+            public bool EnableJsMinification_OverrideForStore { get; set; }
 
-            [GrandResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.EnableCssBundling")]
-            public bool EnableCssBundling { get; set; }
-            public bool EnableCssBundling_OverrideForStore { get; set; }
+            [GrandResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.EnableCssMinification")]
+            public bool EnableCssMinification { get; set; }
+            public bool EnableCssMinification_OverrideForStore { get; set; }
 
             [GrandResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.TwitterMetaTags")]
             public bool TwitterMetaTags { get; set; }

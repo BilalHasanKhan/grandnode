@@ -4,8 +4,8 @@
 @{
     Layout = "_ColumnsOne";
 
-    Html.AddScriptParts("~/Scripts/public.accordion.js");
-    Html.AddScriptParts("~/Scripts/public.onepagecheckout.js");
+    Html.AddScriptParts("~/Scripts/public.accordion.js", excludeFromMinification: false);
+    Html.AddScriptParts("~/Scripts/public.onepagecheckout.js", excludeFromMinification: false);
 
     var storeLocation = webHelper.GetStoreLocation();
 

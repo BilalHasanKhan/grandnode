@@ -19,13 +19,13 @@ namespace Grand.Framework.UI
         void AppendMetaKeywordParts(string part);
         string GenerateMetaKeywords();
 
-        void AddScriptParts(ResourceLocation location, string src, string debugSrc, bool excludeFromBundle, bool isAync);
-        void AppendScriptParts(ResourceLocation location, string src, string debugSrc, bool excludeFromBundle, bool isAsync);
-        string GenerateScripts(IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null);
+        void AddScriptParts(ResourceLocation location, string src, string debugSrc, bool excludeFromMinification, bool isAync);
+        void AppendScriptParts(ResourceLocation location, string src, string debugSrc, bool excludeFromMinification, bool isAsync);
+        string GenerateScripts(IUrlHelper urlHelper, ResourceLocation location);
 
-        void AddCssFileParts(ResourceLocation location, string src, string debugSrc, bool excludeFromBundle = false);
-        void AppendCssFileParts(ResourceLocation location, string src, string debugSrc, bool excludeFromBundle = false);
-        string GenerateCssFiles(IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null);
+        void AddCssFileParts(ResourceLocation location, string src, string debugSrc, bool excludeFromMinification = false);
+        void AppendCssFileParts(ResourceLocation location, string src, string debugSrc, bool excludeFromMinification = false);
+        string GenerateCssFiles(IUrlHelper urlHelper, ResourceLocation location);
 
         void AddCanonicalUrlParts(string part);
         void AppendCanonicalUrlParts(string part);

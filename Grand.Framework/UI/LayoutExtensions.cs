@@ -119,12 +119,12 @@ namespace Grand.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         /// <param name="isAsync">A value indicating whether to add an attribute "async" or not for js files</param>
         public static void AddScriptParts(this IHtmlHelper html, string src, string debugSrc = "",
-            bool excludeFromBundle = false, bool isAsync = false)
+            bool excludeFromMinification = false, bool isAsync = false)
         {
-            AddScriptParts(html, ResourceLocation.Head, src, debugSrc, excludeFromBundle, isAsync);
+            AddScriptParts(html, ResourceLocation.Head, src, debugSrc, excludeFromMinification, isAsync);
         }
         /// <summary>
         /// Add script element
@@ -133,13 +133,13 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         /// <param name="isAsync">A value indicating whether to add an attribute "async" or not for js files</param>
         public static void AddScriptParts(this IHtmlHelper html, ResourceLocation location,
-            string src, string debugSrc = "", bool excludeFromBundle = false, bool isAsync = false)
+            string src, string debugSrc = "", bool excludeFromMinification = false, bool isAsync = false)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            pageHeadBuilder.AddScriptParts(location, src, debugSrc, excludeFromBundle, isAsync);
+            pageHeadBuilder.AddScriptParts(location, src, debugSrc, excludeFromMinification, isAsync);
         }
         /// <summary>
         /// Append script element
@@ -147,12 +147,12 @@ namespace Grand.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         /// <param name="isAsync">A value indicating whether to add an attribute "async" or not for js files</param>
         public static void AppendScriptParts(this IHtmlHelper html, string src, string debugSrc = "",
-            bool excludeFromBundle = false, bool isAsync = false)
+            bool excludeFromMinification = false, bool isAsync = false)
         {
-            AppendScriptParts(html, ResourceLocation.Head, src, debugSrc, excludeFromBundle, isAsync);
+            AppendScriptParts(html, ResourceLocation.Head, src, debugSrc, excludeFromMinification, isAsync);
         }
         /// <summary>
         /// Append script element
@@ -161,13 +161,13 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         /// <param name="isAsync">A value indicating whether to add an attribute "async" or not for js files</param>
         public static void AppendScriptParts(this IHtmlHelper html, ResourceLocation location,
-            string src, string debugSrc = "", bool excludeFromBundle = false, bool isAsync = false)
+            string src, string debugSrc = "", bool excludeFromMinification = false, bool isAsync = false)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            pageHeadBuilder.AppendScriptParts(location, src, debugSrc, excludeFromBundle, isAsync);
+            pageHeadBuilder.AppendScriptParts(location, src, debugSrc, excludeFromMinification, isAsync);
         }
         /// <summary>
         /// Generate all script parts
@@ -177,10 +177,10 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="bundleFiles">A value indicating whether to bundle script elements</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandScripts(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
+        public static IHtmlContent GrandScripts(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            return new HtmlString(pageHeadBuilder.GenerateScripts(urlHelper, location, bundleFiles));
+            return new HtmlString(pageHeadBuilder.GenerateScripts(urlHelper, location));
         }
 
         /// <summary>
@@ -189,10 +189,10 @@ namespace Grand.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
-        public static void AddCssFileParts(this IHtmlHelper html, string src, string debugSrc = "", bool excludeFromBundle = false)
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
+        public static void AddCssFileParts(this IHtmlHelper html, string src, string debugSrc = "", bool excludeFromMinification = false)
         {
-            AddCssFileParts(html, ResourceLocation.Head, src, debugSrc, excludeFromBundle);
+            AddCssFileParts(html, ResourceLocation.Head, src, debugSrc, excludeFromMinification);
         }
         /// <summary>
         /// Add CSS element
@@ -201,12 +201,12 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         public static void AddCssFileParts(this IHtmlHelper html, ResourceLocation location, 
-            string src, string debugSrc = "", bool excludeFromBundle = false)
+            string src, string debugSrc = "", bool excludeFromMinification = false)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            pageHeadBuilder.AddCssFileParts(location, src, debugSrc, excludeFromBundle);
+            pageHeadBuilder.AddCssFileParts(location, src, debugSrc, excludeFromMinification);
         }
         /// <summary>
         /// Append CSS element
@@ -214,10 +214,10 @@ namespace Grand.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
-        public static void AppendCssFileParts(this IHtmlHelper html, string src, string debugSrc = "", bool excludeFromBundle = false)
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
+        public static void AppendCssFileParts(this IHtmlHelper html, string src, string debugSrc = "", bool excludeFromMinification = false)
         {
-            AppendCssFileParts(html, ResourceLocation.Head, src, debugSrc, excludeFromBundle);
+            AppendCssFileParts(html, ResourceLocation.Head, src, debugSrc, excludeFromMinification);
         }
         /// <summary>
         /// Append CSS element
@@ -226,12 +226,12 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="src">Script path (minified version)</param>
         /// <param name="debugSrc">Script path (full debug version). If empty, then minified version will be used</param>
-        /// <param name="excludeFromBundle">A value indicating whether to exclude this script from bundling</param>
+        /// <param name="excludeFromMinification">A value indicating whether to exclude this script from bundling</param>
         public static void AppendCssFileParts(this IHtmlHelper html, ResourceLocation location, 
-            string src, string debugSrc = "", bool excludeFromBundle = false)
+            string src, string debugSrc = "", bool excludeFromMinification = false)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            pageHeadBuilder.AppendCssFileParts(location, src, debugSrc, excludeFromBundle);
+            pageHeadBuilder.AppendCssFileParts(location, src, debugSrc, excludeFromMinification);
         }
         /// <summary>
         /// Generate all CSS parts
@@ -241,10 +241,10 @@ namespace Grand.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="bundleFiles">A value indicating whether to bundle script elements</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandCssFiles(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
+        public static IHtmlContent GrandCssFiles(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
-            return new HtmlString(pageHeadBuilder.GenerateCssFiles(urlHelper, location, bundleFiles));
+            return new HtmlString(pageHeadBuilder.GenerateCssFiles(urlHelper, location));
         }
 
         /// <summary>

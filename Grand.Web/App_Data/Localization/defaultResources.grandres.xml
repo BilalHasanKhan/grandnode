@@ -6012,17 +6012,17 @@
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayEuCookieLawWarning.Hint">
     <Value>Make the site EU cookie law compliant. When enabled, new customers will see an appropriate warning box.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssBundling">
-    <Value>CSS bundling and minification</Value>
+<LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssMinification">
+    <Value>CSS minification</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssBundling.Hint">
-    <Value>Enable to combine (bundle) multiple CSS files into a single file. Do not enable if you're running grandnode in IIS virtual directory. Note that this functionality requires significant server resources (not recommended to use with cheap shared hosting plans).</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssMinification.Hint">
+    <Value>Enable minification of CSS files.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableJsBundling">
-    <Value>JavaScript bundling and minification</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableJsMinification">
+    <Value>JavaScript minification</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableJsBundling.Hint">
-    <Value>Enable to combine (bundle) multiple JavaScript files into a single file. Note that this functionality requires significant server resources (not recommended to use with cheap shared hosting plans).</Value>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableJsMinification.Hint">
+    <Value>Enable minification of JavaScript files.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableXSRFProtectionForAdminArea">
     <Value>Enable XSRF protection for admin area</Value>

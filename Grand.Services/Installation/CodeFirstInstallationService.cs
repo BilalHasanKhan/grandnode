@@ -4911,9 +4911,8 @@ namespace Grand.Services.Installation
                 AllowUnicodeCharsInUrls = true,
                 CanonicalUrlsEnabled = false,
                 WwwRequirement = WwwRequirement.NoMatter,
-                //we disable bundling out of the box because it requires a lot of server resources
-                EnableJsBundling = false,
-                EnableCssBundling = false,
+                EnableJsMinification = false,
+                EnableCssMinification = false,
                 TwitterMetaTags = true,
                 OpenGraphMetaTags = true,
                 ReservedUrlRecordSlugs = new List<string>

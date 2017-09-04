@@ -49,13 +49,13 @@ namespace Grand.Core.Domain.Seo
         /// </summary>
         public WwwRequirement WwwRequirement { get; set; }
         /// <summary>
-        /// A value indicating whether JS file bundling and minification is enabled
+        /// A value indicating whether JS file minification is enabled
         /// </summary>
-        public bool EnableJsBundling { get; set; }
+        public bool EnableJsMinification { get; set; }
         /// <summary>
-        /// A value indicating whether CSS file bundling and minification is enabled
+        /// A value indicating whether CSS file minification is enabled
         /// </summary>
-        public bool EnableCssBundling { get; set; }
+        public bool EnableCssMinification { get; set; }
         /// <summary>
         /// A value indicating whether Twitter META tags should be generated
         /// </summary>

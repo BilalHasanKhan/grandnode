@@ -5,7 +5,7 @@
 @inject IHttpContextAccessor httpContextAccessor
 
 @{
-    Html.AddScriptParts("~/Scripts/public.actions.js");
+    Html.AddScriptParts("~/Scripts/public.actions.js", excludeFromMinification: false);
     Html.AddScriptParts("~/Scripts/jquery.magnific-popup.js");
     Html.AddCssFileParts("~/Content/magnific-popup/magnific-popup.css");
 

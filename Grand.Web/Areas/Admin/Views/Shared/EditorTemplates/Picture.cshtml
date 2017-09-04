@@ -3,8 +3,8 @@
 @using Grand.Framework.UI;
 @{
     //register CSS and JS
-    Html.AddCssFileParts("~/Scripts/fineuploader/fineuploader-4.2.2.min.css", excludeFromBundle:true);
-    Html.AddScriptParts("~/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js", excludeFromBundle: true);
+    Html.AddCssFileParts("~/Scripts/fineuploader/fineuploader-4.2.2.min.css", excludeFromMinification:true);
+    Html.AddScriptParts("~/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js", excludeFromMinification: true);
 
     //other variables
     var random = CommonHelper.GenerateRandomInteger();

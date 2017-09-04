@@ -2500,8 +2500,8 @@ namespace Grand.Web.Areas.Admin.Controllers
             model.SeoSettings.CanonicalUrlsEnabled = seoSettings.CanonicalUrlsEnabled;
             model.SeoSettings.WwwRequirement = (int)seoSettings.WwwRequirement;
             model.SeoSettings.WwwRequirementValues = seoSettings.WwwRequirement.ToSelectList();
-            model.SeoSettings.EnableJsBundling = seoSettings.EnableJsBundling;
-            model.SeoSettings.EnableCssBundling = seoSettings.EnableCssBundling;
+            model.SeoSettings.EnableJsMinification = seoSettings.EnableJsMinification;
+            model.SeoSettings.EnableCssMinification = seoSettings.EnableCssMinification;
             model.SeoSettings.TwitterMetaTags = seoSettings.TwitterMetaTags;
             model.SeoSettings.OpenGraphMetaTags = seoSettings.OpenGraphMetaTags;
             //override settings
@@ -2516,8 +2516,8 @@ namespace Grand.Web.Areas.Admin.Controllers
                 model.SeoSettings.ConvertNonWesternChars_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.ConvertNonWesternChars, storeScope);
                 model.SeoSettings.CanonicalUrlsEnabled_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.CanonicalUrlsEnabled, storeScope);
                 model.SeoSettings.WwwRequirement_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.WwwRequirement, storeScope);
-                model.SeoSettings.EnableJsBundling_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.EnableJsBundling, storeScope);
-                model.SeoSettings.EnableCssBundling_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.EnableCssBundling, storeScope);
+                model.SeoSettings.EnableJsMinification_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.EnableJsMinification, storeScope);
+                model.SeoSettings.EnableCssMinification_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.EnableCssMinification, storeScope);
                 model.SeoSettings.TwitterMetaTags_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.TwitterMetaTags, storeScope);
                 model.SeoSettings.OpenGraphMetaTags_OverrideForStore = _settingService.SettingExists(seoSettings, x => x.OpenGraphMetaTags, storeScope);
             }
@@ -2728,8 +2728,8 @@ namespace Grand.Web.Areas.Admin.Controllers
             seoSettings.ConvertNonWesternChars = model.SeoSettings.ConvertNonWesternChars;
             seoSettings.CanonicalUrlsEnabled = model.SeoSettings.CanonicalUrlsEnabled;
             seoSettings.WwwRequirement = (WwwRequirement)model.SeoSettings.WwwRequirement;
-            seoSettings.EnableJsBundling = model.SeoSettings.EnableJsBundling;
-            seoSettings.EnableCssBundling = model.SeoSettings.EnableCssBundling;
+            seoSettings.EnableJsMinification = model.SeoSettings.EnableJsMinification;
+            seoSettings.EnableCssMinification = model.SeoSettings.EnableCssMinification;
             seoSettings.TwitterMetaTags = model.SeoSettings.TwitterMetaTags;
             seoSettings.OpenGraphMetaTags = model.SeoSettings.OpenGraphMetaTags;
 
@@ -2781,15 +2781,15 @@ namespace Grand.Web.Areas.Admin.Controllers
             else if (!String.IsNullOrEmpty(storeScope))
                 _settingService.DeleteSetting(seoSettings, x => x.WwwRequirement, storeScope);
             
-            if (model.SeoSettings.EnableJsBundling_OverrideForStore || storeScope == "")
-                _settingService.SaveSetting(seoSettings, x => x.EnableJsBundling, storeScope, false);
+            if (model.SeoSettings.EnableJsMinification_OverrideForStore || storeScope == "")
+                _settingService.SaveSetting(seoSettings, x => x.EnableJsMinification, storeScope, false);
             else if (!String.IsNullOrEmpty(storeScope))
-                _settingService.DeleteSetting(seoSettings, x => x.EnableJsBundling, storeScope);
+                _settingService.DeleteSetting(seoSettings, x => x.EnableJsMinification, storeScope);
 
-            if (model.SeoSettings.EnableCssBundling_OverrideForStore || storeScope == "")
-                _settingService.SaveSetting(seoSettings, x => x.EnableCssBundling, storeScope, false);
+            if (model.SeoSettings.EnableCssMinification_OverrideForStore || storeScope == "")
+                _settingService.SaveSetting(seoSettings, x => x.EnableCssMinification, storeScope, false);
             else if (!String.IsNullOrEmpty(storeScope))
-                _settingService.DeleteSetting(seoSettings, x => x.EnableCssBundling, storeScope);
+                _settingService.DeleteSetting(seoSettings, x => x.EnableCssMinification, storeScope);
 
             if (model.SeoSettings.TwitterMetaTags_OverrideForStore || storeScope == "")
                 _settingService.SaveSetting(seoSettings, x => x.TwitterMetaTags, storeScope, false);

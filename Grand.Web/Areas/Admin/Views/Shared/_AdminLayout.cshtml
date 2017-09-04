@@ -26,51 +26,51 @@
     var supportRtl = workContext.WorkingLanguage.Rtl &&
         !localizationSettings.IgnoreRtlPropertyForAdminArea;
 
-    Html.AppendCssFileParts("~/Administration/styles.css", excludeFromBundle: true);
+    Html.AppendCssFileParts("~/Administration/styles.css", excludeFromMinification: true);
 
     //CSS
-    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.rtl.min.css", kendoVersion), excludeFromBundle: true);
-    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.custom.css", kendoVersion), excludeFromBundle: true);
-    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.common.min.css", kendoVersion), excludeFromBundle: true);
-    Html.AppendCssFileParts("~/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css", excludeFromBundle: true);
-    Html.AddScriptParts("~/Content/tinymce/tinymce.min.js", excludeFromBundle: true);
+    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.rtl.min.css", kendoVersion), excludeFromMinification: true);
+    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.custom.css", kendoVersion), excludeFromMinification: true);
+    Html.AppendCssFileParts(string.Format("~/Content/kendo/{0}/kendo.common.min.css", kendoVersion), excludeFromMinification: true);
+    Html.AppendCssFileParts("~/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css", excludeFromMinification: true);
+    Html.AddScriptParts("~/Content/tinymce/tinymce.min.js", excludeFromMinification: true);
     if (supportRtl)
     {
-        Html.AppendCssFileParts("~/Administration/global/css/plugins-rtl.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/themes/darkblue-rtl.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/custom-rtl.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/layout-rtl.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/global/css/components-rtl.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/bootstrap/css/bootstrap-rtl.min.css", excludeFromBundle: true);
+        Html.AppendCssFileParts("~/Administration/global/css/plugins-rtl.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/themes/darkblue-rtl.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/custom-rtl.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/layout-rtl.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/global/css/components-rtl.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/bootstrap/css/bootstrap-rtl.min.css", excludeFromMinification: true);
     }
     else
     {
-        Html.AppendCssFileParts("~/Administration/global/css/plugins.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/themes/darkblue.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/custom.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/layout/layout.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/global/css/components.min.css", excludeFromBundle: true);
-        Html.AppendCssFileParts("~/Administration/bootstrap/css/bootstrap.min.css", excludeFromBundle: true);
+        Html.AppendCssFileParts("~/Administration/global/css/plugins.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/themes/darkblue.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/custom.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/layout/layout.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/global/css/components.min.css", excludeFromMinification: true);
+        Html.AppendCssFileParts("~/Administration/bootstrap/css/bootstrap.min.css", excludeFromMinification: true);
     }
 
-    Html.AppendCssFileParts("~/Administration/bootstrap/css/daterangepicker.min.css", excludeFromBundle: true);
-    Html.AppendCssFileParts("~/Administration/simple-line-icons/simple-line-icons.min.css", excludeFromBundle: true);
-    Html.AppendCssFileParts("~/Administration/font-awesome/css/font-awesome.min.css", excludeFromBundle: true);
+    Html.AppendCssFileParts("~/Administration/bootstrap/css/daterangepicker.min.css", excludeFromMinification: true);
+    Html.AppendCssFileParts("~/Administration/simple-line-icons/simple-line-icons.min.css", excludeFromMinification: true);
+    Html.AppendCssFileParts("~/Administration/font-awesome/css/font-awesome.min.css", excludeFromMinification: true);
 
     //js
-    Html.AppendScriptParts(string.Format("~/Scripts/kendo/{0}/kendo.all.min.js", kendoVersion), excludeFromBundle: true);
-    Html.AppendScriptParts("~/Scripts/admin.common.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Scripts/jquery-ui-1.10.3.custom.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Scripts/jquery.validate.unobtrusive.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Scripts/jquery.validate.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(string.Format("~/Scripts/kendo/{0}/kendo.all.min.js", kendoVersion), excludeFromMinification: true);
+    Html.AppendScriptParts("~/Scripts/admin.common.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Scripts/jquery-ui-1.10.3.custom.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Scripts/jquery.validate.unobtrusive.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Scripts/jquery.validate.min.js", excludeFromMinification: true);
 
-    Html.AppendScriptParts("~/Administration/layout/js/layout.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/global/js/jquery.cookieBar.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/global/js/app.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/bootstrap/js/daterangepicker.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/global/js/moment.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/bootstrap/js/bootstrap.min.js", excludeFromBundle: true);
-    Html.AppendScriptParts("~/Administration/global/js/jquery.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts("~/Administration/layout/js/layout.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/global/js/jquery.cookieBar.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/global/js/app.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/bootstrap/js/daterangepicker.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/global/js/moment.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/bootstrap/js/bootstrap.min.js", excludeFromMinification: true);
+    Html.AppendScriptParts("~/Administration/global/js/jquery.min.js", excludeFromMinification: true);
 
 
     //page title
